@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Navigate } from "react-router-dom";
 
-const ProtectedRoutes = () => {
+const ProtectedRoutes = ({ admin }) => {
   const auth = true;
 
   if (!auth) {

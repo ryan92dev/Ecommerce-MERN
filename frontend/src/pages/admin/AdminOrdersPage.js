@@ -1,11 +1,16 @@
 import { Row, Col, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
-const UserOrdersPage = () => {
+import AdminLinksComponent from "../../components/admin/AdminLinksComponents";
+
+const AdminOrdersPage = () => {
   return (
     <Row className="m-5">
-      <Col md={12}>
-        <h1>My Orders</h1>
-        <Table striped bordered hover>
+      <Col md={2}>
+        <AdminLinksComponent />
+      </Col>
+      <Col md={10}>
+        <h1>Orders</h1>
+        <Table striped bordered hover responsive>
           <thead>
             <tr>
               <th>#</th>
@@ -13,6 +18,7 @@ const UserOrdersPage = () => {
               <th>Date</th>
               <th>Total</th>
               <th>Delivered</th>
+              <th>Payment Method</th>
               <th>Order details</th>
             </tr>
           </thead>
@@ -27,8 +33,9 @@ const UserOrdersPage = () => {
                   <td>
                     <i className={item}></i>
                   </td>
+                  <td>PayPal</td>
                   <td>
-                    <Link to="/user/order-details">go to order</Link>
+                    <Link to="/admin/order-details">go to order</Link>
                   </td>
                 </tr>
               )
@@ -40,4 +47,4 @@ const UserOrdersPage = () => {
   );
 };
 
-export default UserOrdersPage;
+export default AdminOrdersPage;
